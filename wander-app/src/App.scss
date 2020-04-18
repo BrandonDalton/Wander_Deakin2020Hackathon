@@ -4,7 +4,7 @@
 
   .homePage--menu {
     height: 100%;
-    border-right: 2px solid #051923;
+    border-right: 4px solid #051923;
     max-width: 100px;
   }
 
@@ -49,6 +49,13 @@
           top: 35%;
           left: 35%;
         }
+        input[type=number] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+        }
+
        }
       }
 
@@ -80,22 +87,45 @@
     flex-direction: column;
     text-align: center;
     flex: 1;
-    background-color: red;
     width: 100%;
+    border-left: 4px solid #051923;
 
     .goalSection--goalContainer {
       flex: 1;
-      background: tan;
+      background: #006494;
+      
     }
 
     .goalSection--toDoControls {
       flex: 1;
-      background: blueviolet;
+      background: #006494;
+      form {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+
+      .button {
+        flex: 1;
+        width: 100px;
+        height: 40px;
+        background-color: #00a6fb;
+        border-radius: 20px;
+        line-height: 40px;
+        box-shadow: 2px 2px 2px;
+        margin: 0 auto;
+      }
+
     }
 
     .goalSection--toDoList {
-      flex: 1;
-      background: pink;
+      flex: 5;
+      background: #006494;
     }
 
   }

@@ -18,9 +18,8 @@ function App() {
 
   return (
    <div className="homePage--container">
-          Home Page
      <div className="homePage--menu">
-       Menu
+       Menu Placeholder
      </div>
      <Timer/>
      <Goal/>

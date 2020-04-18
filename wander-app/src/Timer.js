@@ -50,14 +50,14 @@ class Timer extends React.Component {
         <div className="timerSection--timerContainer">
           <div className="timerSection--timer">
            <h1>Get Productive</h1>
-           <Countdown ref={this.setClockRef} autoStart={false} precision={0} date={Date.now() + (this.state.value * 1000)} />
+           <Countdown ref={this.setClockRef} autoStart={false} precision={0} date={Date.now() + (this.state.value * 60000)} />
           </div>
         </div>
         <div className="timerSection--timerControls">
           <div className="timerControls--formContainer">
           <form onSubmit={this.handleSubmit}>
         <label>
-          Seconds:
+          Minutes:
           <input type="number" value={this.state.value} onChange={this.handleChange} />
         </label>
       </form>
