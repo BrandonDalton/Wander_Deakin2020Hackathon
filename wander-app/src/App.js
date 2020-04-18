@@ -3,28 +3,9 @@ import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import './App.scss';
 import Timer from './Timer';
 import Goal from './Goal';
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-
-const darkTheme = createMuiTheme({
-  palette: {
-    type: 'dark',
-  },
-});
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
 
 function App() {
   return (

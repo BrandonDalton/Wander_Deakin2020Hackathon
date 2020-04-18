@@ -113,3 +113,9 @@
     }
   }
 
+.modal-container {
+  .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded {
+    margin: 24px auto;
+    width: 60%;
+  }
+}

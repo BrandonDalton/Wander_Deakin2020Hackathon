@@ -2,9 +2,11 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Countdown from 'react-countdown-now';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
+import ListContainer from './ListContainer';
+import Modal from '@material-ui/core/Modal';
+
 import './App.scss';
 
 class Timer extends React.Component {
@@ -12,7 +14,7 @@ class Timer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: '', onStart: true };
+    this.state = { value: '', onStart: true, open: false };
 
     this.setClockRef = this.setClockRef.bind(this);
     this.start = this.start.bind(this);
@@ -33,6 +35,10 @@ class Timer extends React.Component {
   clear() {
     console.log(this.state)
     this.setState({ value: '' });
+  }
+
+  handleCompletion() {
+    this.setState({ open: true });
   }
 
   setClockRef(ref) {
@@ -57,7 +63,12 @@ class Timer extends React.Component {
             <div className="timerSection--timerContainer">
               <div className="timerSection--timer">
                 <h1>Get Productive</h1>
-                <Countdown ref={this.setClockRef} autoStart={false} precision={0} date={Date.now() + (this.state.value * 60000)} />
+                <Countdown
+                  ref={this.setClockRef}
+                  autoStart={false}
+                  precision={0}
+                  onComplete={() => this.setState({open: true})}
+                  date={Date.now() + (this.state.value * 60000)} />
               </div>
             </div>
             <div className="timerSection--timerControls">
@@ -74,6 +85,27 @@ class Timer extends React.Component {
             </div>
           </CardContent>
         </Card>
+
+        <Modal
+          className={'modal-container'}
+          open={this.state.open}
+          onClose={() => {this.setState({
+            open: false
+          })}}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          <Card>
+            <CardContent>
+              <h1>Time for a break!</h1>
+              <ListContainer items={[
+                'Yoga, 30 minutes',
+                'Walk in your area, 15 minutes',
+                'Bicycle ride, 45 minutes'
+              ]} />
+            </CardContent>
+          </Card>
+        </Modal>
       </div>
     )
   }
