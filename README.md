@@ -1,4 +1,4 @@
-# Wander_Deakin2020Hackathon
+# Wander_Deakin2020Hackathon Runners-up
 
 ## What is Wander?
 
